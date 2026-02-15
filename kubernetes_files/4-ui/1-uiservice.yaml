@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: uiservice
+spec:
+  selector: 
+    app.kubernetes.io/name: weatherapp-ui
+  ports:
+    - name: uiport
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: ClusterIP

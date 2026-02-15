@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysqlserv
+spec:
+  selector:
+    app: mysqldbpod
+  clusterIP: None
+  ports:
+    - port: 3306

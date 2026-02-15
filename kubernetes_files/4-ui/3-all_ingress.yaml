@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: weatheringress  
+spec:
+  tls:
+   - hosts:
+     - www.weatherku.com
+     secretName: uitlssecret
+  ingressClassName: nginx
+  rules:
+  - host: www.weatherku.com
+    http:
+      paths:
+        - path: /
+          backend:
+            service:
+              name: uiservice
+              port:
+                number: 3000
+          pathType: Prefix
+  

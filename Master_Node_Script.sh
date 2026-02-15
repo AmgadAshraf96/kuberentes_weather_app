@@ -128,16 +128,13 @@ chmod 700 get_helm.sh
 # TO install CCM (The Cloud Controller Manager)Automatic provisioning of Linode NodeBalancers when you create LoadBalancer services:
     # Add the Linode Helm repository
         #helm repo add linode-ccm https://linode.github.io/linode-cloud-controller-manager/
-
     # Update the repository to get the latest charts
         #helm repo update
-
     # Now install the CCM
         #helm install ccm-linode linode-ccm/ccm-linode \
         #--set apiToken=<linodeapitoken> \
         #--set region=<linoderegion> \
         #--namespace kube-system \
-        #--set linodegoDebug=true
 
 ###
 # TO INSTALL NGNIX INGRESS controller

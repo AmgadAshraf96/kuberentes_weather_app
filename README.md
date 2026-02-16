@@ -27,31 +27,6 @@ Weather microservices application deployed on Kubernetes with kubeadm cluster, L
   * Container runtime: containerd
   * CNI Plugin: Calico for pod networking
 
-**Project Structure:-**
-
-  ├── Master_Node_Script.sh              # Master node setup automation
-  |
-  ├── Worker_Nodes_script.sh             # Worker nodes setup automation
-  |
-  ├── calico-withnat.yaml                # Calico CNI configuration
-  |
-  ├── kubernetes_files/
-  │   ├── 1-mysql_creation/              # MySQL StatefulSet, Service, Job
-  |
-  │   ├── 2-auth/                        # Auth service Deployment & Service
-  |
-  │   ├── 3-weather/                     # Weather service Deployment & Service
-  |
-  │   └── 4-ui/                          # UI Deployment, Service & Ingress
-  |
-  └── project_files/
-      ├── auth/                          # Go authentication service code
-      |
-      ├── weather/                       # Python weather service code
-      |
-      └── UI/                            # Node.js frontend code
-      
-
 **🛠️ Installation**
   1. Cluster Setup
 
@@ -133,4 +108,4 @@ Weather microservices application deployed on Kubernetes with kubeadm cluster, L
       kubectl get pv,pvc
     
     # View logs
-    kubectl logs <pod-name>
+      kubectl logs <pod-name>

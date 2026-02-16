@@ -30,27 +30,39 @@ Weather microservices application deployed on Kubernetes with kubeadm cluster, L
 **Project Structure:-**
 
   ├── Master_Node_Script.sh              # Master node setup automation
+  |
   ├── Worker_Nodes_script.sh             # Worker nodes setup automation
+  |
   ├── calico-withnat.yaml                # Calico CNI configuration
+  |
   ├── kubernetes_files/
   │   ├── 1-mysql_creation/              # MySQL StatefulSet, Service, Job
+  |
   │   ├── 2-auth/                        # Auth service Deployment & Service
+  |
   │   ├── 3-weather/                     # Weather service Deployment & Service
+  |
   │   └── 4-ui/                          # UI Deployment, Service & Ingress
+  |
   └── project_files/
       ├── auth/                          # Go authentication service code
+      |
       ├── weather/                       # Python weather service code
+      |
       └── UI/                            # Node.js frontend code
+      
 
 **🛠️ Installation**
   1. Cluster Setup
+
     On Master Node:
       sudo bash Master_Node_Script.sh
+      
     On Worker Nodes:
       sudo bash Worker_Nodes_script.sh
     # Run the join command on worker nodes
  
-  2. Deploy Infrastructure Components
+  3. Deploy Infrastructure Components
 
     # Install Linode CSI Driver
       helm repo add linode-csi https://linode.github.io/linode-blockstorage-csi-driver/

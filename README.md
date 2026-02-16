@@ -28,6 +28,7 @@ Weather microservices application deployed on Kubernetes with kubeadm cluster, L
   * CNI Plugin: Calico for pod networking
 
 **Project Structure:-**
+
   ├── Master_Node_Script.sh              # Master node setup automation
   ├── Worker_Nodes_script.sh             # Worker nodes setup automation
   ├── calico-withnat.yaml                # Calico CNI configuration
@@ -76,9 +77,7 @@ Weather microservices application deployed on Kubernetes with kubeadm cluster, L
      
     # Step 1: Deploy MySQL
       kubectl apply -f kubernetes_files/1-mysql_creation/1-mysqlsecret.yaml
-      
       kubectl apply -f kubernetes_files/1-mysql_creation/2-sqlservice.yaml
-      
       kubectl apply -f kubernetes_files/1-mysql_creation/3-statfulset.yaml
       
     # Wait for MySQL to be ready
@@ -98,6 +97,7 @@ Weather microservices application deployed on Kubernetes with kubeadm cluster, L
   
   5. Configure Ingress
     # Create TLS secret (if using HTTPS)
+
       kubectl create secret tls uitlssecret \
         --cert=path/to/your/cert.crt \
         --key=path/to/your/key.key
